@@ -23,7 +23,6 @@ class InstaPost(models.Model):
         ('images', 'image')
     ]
     user_post = models.ForeignKey(User, on_delete=models.DO_NOTHING, default = None)
-    media_file = models.FileField()
     url = models.CharField(max_length = 100, default = 'default')
     type = models.CharField(max_length = 6, choices = type_choices, default = 'image')
     tag = models.ManyToManyField(PostTags)
