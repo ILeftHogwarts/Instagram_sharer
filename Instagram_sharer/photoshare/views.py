@@ -58,7 +58,7 @@ def main_page(request):
         except User.DoesNotExist as ex404:
             raise Http404('User does not exist')
     else:
-        filter_form = TagForm()
+        filter_form = TagForm(initial = [" "])
         try:
             current_user = User.objects.get(name = "Andrew Diemientiev")
             posts = InstaPost.objects.filter(user_post = current_user)
