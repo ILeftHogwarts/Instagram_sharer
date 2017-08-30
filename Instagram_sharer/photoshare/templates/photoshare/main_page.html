@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+        <style>
+            .hero{
+                background-color: #1a75ff; height: 50px
+            }
+            img{height: 100%; width: 100%}
+            video{height: 100%; width: 100%}
+            select{color: black}
+            option{color: black}
+        </style>
+        <script type="text/javascript">
+            document.getElementById("ReceivePosts").onclick = function() 
+            {location.href = "/post_receive/"};
+        </script>  
+    </head>
+    <body>
+        <div class="hero conteiner col-lg-12">
+                <div class="btn btn-success">
+                    <form action="" method="get"style="width: 100%">
+                            {{form}}
+                            <input type="submit" value="OK" style="color:black">
+                    </form>
+                </div>
+            <a href="post_receive" class="btn btn-success" style="float:right">Receive posts</a>    
+        </div>
+        <div class="container">
+            {% for post in posts %}
+                <div class="col-lg-4 col-sm-12 justify-content-around">
+                    {% if post.type == "videos" %}
+                        <video src= {{post.url}} controls></video>
+                    {% else %}
+                        <img src = {{post.url}} alt= {{post.tag}}>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
