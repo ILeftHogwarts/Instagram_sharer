@@ -25,7 +25,7 @@ SECRET_KEY = '-06egtyjs8f50l020tdlojnhs76ck9-wcv^^mtt+mc0x#7-7cn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['IleftHogwarts.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
